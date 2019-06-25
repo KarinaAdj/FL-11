@@ -1,0 +1,308 @@
+@mixin text-settings($mColor:inherit, $mFFamily:inherit, $mFSize:inherit, $mWSpace:inherit,
+                    $mLHeight:inherit, $mLSpace:inherit, $mFWeight: inherit, $mTAlign: inherit) {
+  color: $mColor;
+  font-family: $mFFamily;
+  letter-spacing: $mLSpace;
+  font-weight: $mFWeight;
+  text-align: $mTAlign;
+  font-size: $mFSize;
+  word-spacing: $mWSpace;
+  line-height: $mLHeight;
+}
+
+$sizes: (
+  bodyWidth: 100%,
+  bodyMaxWidth: 1920px,
+  headerHeight: 46.3vw,
+  headerMaxHeight: 900px,
+  headerWrapWidth: 50%,
+  headerUnderlineWidth: 267px,
+  headerUnderlineHeight: 21px,
+  headerButtonWidth: 125px,
+  headerButtonHeight: 40px,
+  logoWidth: 40px,
+  logoHeight: 40px,
+  welcomeUnderlineWidth: 160px,
+  welcomeUnderlineHeight: 10px,
+  cardWidth: 350px,
+  cardHeight: 400px,
+  cardImageWidth: 90%,
+  cardImageHeight: 207px,
+  cardUnderlineWidth: 100%,
+  cardUnderlineHeight: 11px,
+  bannerWidth: 842px,
+  bannerHeight: 125px,
+  bannerUnderlineWidth: 55px,
+  bannerUnderlineHeight: 10px,
+  bannerButtonWidth:125px,
+  bannerButtonHeight:45px,
+  footerHeight: 15vw,
+  footerWrapWidth: 80%,
+  footerTextWidth: 260px
+);
+
+p {
+  margin: 0;
+  padding: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+body {
+  width: map-get($sizes, bodyWidth);
+  background: $bodyBgColor;
+  max-width: map-get($sizes, bodyMaxWidth);
+  margin: auto;
+}
+
+.header {
+  height: map-get($sizes, headerHeight);
+  background: url($headerBgImage) no-repeat local center;
+  background-size: cover;
+  max-height: map-get($sizes, headerMaxHeight);
+  border-bottom-right-radius: 40%;
+  
+
+  .header-wrap {
+    margin-left: 10%;
+    width: map-get($sizes, headerWrapWidth);
+    padding-top: 17px;
+
+    .header_heading {
+      margin-top: 63px;
+      @include text-settings($mColor: $headerTextColor, $mFFamily: $fontSourceSansPro, $mFSize: 64px, $mWSpace: -1px,
+      $mLHeight: 63px, $mFWeight: 800);
+
+      &::after {
+        width: map-get($sizes, headerUnderlineWidth);
+        background: $underlineColor;
+        display: block;
+        content: '';
+        z-index: -4;
+        height: map-get($sizes, headerUnderlineHeight);
+        margin-top: -21px;
+      }
+    }
+
+
+    .header_button {
+      margin-top: 55px;
+      background-color: $joinButtonBgColor;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      height: map-get($sizes, headerButtonHeight);
+      width: map-get($sizes, headerButtonWidth);
+      @include text-settings($mFFamily: $fontHind, $mColor: white, $mFWeight: 700, $mTAlign: center);
+    }
+
+    .header_text {
+      @include text-settings($mColor: $headerTextColor, $mFFamily: $headerDescriptionFontFamily, $mFSize: 14px, $mWSpace: 1.3px, $mLHeight: 21px);
+      margin-top: 32px;
+      white-space: pre-line;
+    }
+  }
+}
+
+.landing-logo {
+  display: flex;
+  color: $headerTextColor;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    height: map-get($sizes, logoHeight);
+    margin-right: 12px;
+    width: map-get($sizes, logoWidth);
+  }
+
+  p {
+    @include text-settings($mFFamily: $logoFontFamily, $mFSize: 1.41em, $mFWeight: 600,
+    $mLSpace: -0.04em, $mWSpace: 0);
+    margin-top: -3px;
+
+    span {
+      display: block;
+      margin-top: $logoSpanMarginTop;
+      @include text-settings($mFSize: 0.44em, $mFWeight: 500, $mLSpace: -0.04em, $mTAlign: center);
+    }
+  }
+}
+
+
+
+  .section_card_wrap {
+    display: flex;
+    align-content: flex-start;
+
+    .section_card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+
+      margin: 15px 7px 0 8px;
+      background: $cardBgColor;
+      border-radius: 5px;
+      width: map-get($sizes, cardWidth);
+      height: map-get($sizes, cardHeight);
+
+      img {
+        display: block;
+        flex-shrink: 0;
+        height: map-get($sizes, cardImageHeight);
+        border-radius: 5px;
+        margin-top: 17px;
+        width: map-get($sizes, cardImageWidth);
+        
+      }
+
+      .section_card_heading {
+        display: block;
+        margin-top: 13px;
+        flex-shrink: 0;
+        @include text-settings($mColor: white, $mFFamily: $fontSourceSansPro, $mFSize: 21px, $mFWeight: 600);
+
+        &:after {
+          content: '';
+          width: map-get($sizes, cardUnderlineWidth);
+          height: map-get($sizes, cardUnderlineHeight);
+          margin-top: -11px;
+          background: $underlineColor;
+          display: block;
+        }
+      }
+
+      .section_card_text {
+        padding: 0 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+        @include text-settings($mColor: $lightGrayColor, $mFFamily: $cardDescriptionFontFamily, $mFSize: 14px,
+        $mLHeight: 20px, $mTAlign: center, $mLSpace: 0, $mFWeight: 500, $mWSpace: $cardDescriptionWordSpacing);
+        
+      }
+    }
+  }
+
+  .section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    
+  
+    .section_text {
+      margin-top: 31px;
+      margin-bottom: 24px;
+      @include text-settings($mColor: $welcomeHeaderTextColor, $mFFamily: $fontSourceSansPro, $mFSize: 38px, $mWSpace: 3px,
+      $mLSpace: -1px, $mFWeight: 600);
+      
+  
+      &:after {
+        content: "";
+        width: map-get($sizes, welcomeUnderlineWidth);
+        height: map-get($sizes, welcomeUnderlineHeight);
+        background: $underlineColor;
+        display: block;
+        margin-top: -17px;
+        margin-left: 192px;
+       
+      }
+    }
+
+  .section_banner {
+    
+    width: map-get($sizes, bannerWidth);
+    height: map-get($sizes, bannerHeight);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 4px;
+    background: linear-gradient(to right, $gradientStartColor, $gradientEndColor);
+    font-family: $fontHind;
+    margin-top: 123px;
+
+    .section_banner_text_wrap {
+      margin-bottom: 19px;
+
+      .section_banner_heading {
+        @include text-settings($mColor: $gradientHeadingTextColor, $mFSize: 27px, $mWSpace: -2px, $mFWeight: 900);
+
+        &:after {
+          content: '';
+          display: block;
+          margin-left: 108px;
+          margin-top: -19px;
+          background: $underlineColor;
+          height: map-get($sizes, bannerUnderlineHeight);
+          width: map-get($sizes, bannerUnderlineWidth);
+          
+        }
+      }
+
+      .section_banner_text {
+        margin-top: 16px;
+        @include text-settings($mColor: $lightGrayColor, $mFSize: 14px, $mFFamily: $cardDescriptionFontFamily);
+        
+      }
+    }
+
+    .section_banner_button {
+      height: map-get($sizes, bannerButtonHeight);
+      width: map-get($sizes, bannerButtonWidth);
+      background-color: $joinButtonBgColor;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      float: right;
+      @include text-settings($mFFamily: $fontHind, $mColor: white, $mFSize: 16px, $mFWeight: 700, $mTAlign: center);
+    }
+  }
+}
+
+.footer {
+  margin-top: -68px;
+  padding-top: 72px;
+  height: map-get($sizes, footerHeight);
+  background: $footerBgColor;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  .footer-wrap {
+    color: $lightGrayColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: map-get($sizes, footerWrapWidth);
+    margin: 0 auto;
+
+
+    .footer_text {
+      @include text-settings($mFFamily: $footerFontFamily, $mFSize: 12px, $mWSpace: 0.5px, $mLHeight: 18px);
+      margin-right: 11px;
+      width: map-get($sizes, footerTextWidth);
+      
+    }
+    .footer_logo {
+      @extend .landing-logo;
+      color: $lightGrayColor;
+    }
+
+    .footer-cr {
+      @include text-settings($mColor: $lightGrayColor, $mFFamily: $footerFontFamily, $mFSize: 14px);
+    }
+  }
+}
