@@ -1,0 +1,306 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+:root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #162b4d;
+  --link: #fff;
+  --link--hover: #b8b8b8;
+  --bg-footer-color: #162b4d;
+}
+
+body {
+  font-family: roboto;
+  background-color: #0b192f;
+}
+
+/* Your styles go here */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-elements {
+  display: flex;
+  justify-content: space-between;
+  background-color: #162b4d;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.header-elements a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.landing-logo span {
+  color: #b71757;
+}
+
+.main-logo {
+  padding-top: 11px;
+}
+
+.main-logo a {
+  padding: 41px 2.5rem 40px 2.5rem;
+
+  font-size: 19px;
+  font-weight: 270;
+}
+
+.main-logo a:hover {
+  background-color: #b8b8b8;
+}
+
+.landing-logo {
+  font-size: 35px;
+  font-weight: 200;
+}
+
+.post-1 {
+  background: #b71757;
+}
+
+.post-odd {
+  width: 50%;
+  height: inherit;
+  color: #ffffff;
+  position: relative;
+  cursor: pointer;
+}
+
+.post-odd:hover {
+  opacity: 0.5;
+}
+
+.post-even:hover {
+  opacity: 0.5;
+}
+
+.post-odd h2 {
+  font-size: 4vw;
+  font-weight: 100;
+  padding-left: 3vw;
+  padding-top: 2vw;
+}
+
+.post-odd p {
+  width: 324px;
+  font-size: 17px;
+  font-weight: 200;
+  opacity: 0.7;
+  padding-left: 3vw;
+  padding-top: 1vw;
+  line-height: 1.5;
+  padding-bottom: 3vw;
+}
+
+.date-odd {
+  font-size: 4vw;
+  font-weight: 100;
+  opacity: 0.3;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+}
+
+.month-odd {
+  font-size: 2.4vw;
+  font-weight: 100;
+  position: absolute;
+  top: 5vw;
+  right: 1vw;
+  opacity: 0.3;
+}
+
+.month-odd5 {
+  font-size: 2.4vw;
+  font-weight: 100;
+  position: absolute;
+  top: 5.5vw;
+  right: 1.7vw;
+  opacity: 0.3;
+}
+
+.post-2 {
+  background: #0d7e71;
+}
+
+.post-even {
+  width: 50%;
+  height: inherit;
+  color: #ffffff;
+  position: relative;
+  cursor: pointer;
+}
+
+.travel-fhoto {
+  width: 50%;
+  cursor: pointer;
+  transition: opacity 1s linear;
+}
+
+.travel-fhoto:hover {
+  opacity: 0.5;
+}
+
+.post-even h2 {
+  font-size: 60px;
+  font-weight: 200;
+  text-align: right;
+  padding-top: 35px;
+  padding-right: 45px;
+}
+
+.post-even p {
+  width: 324px;
+  font-size: 17px;
+  font-weight: 200;
+  opacity: 0.7;
+  text-align: right;
+  padding-right: 45px;
+  padding-top: 35px;
+  padding-bottom: 3vw;
+  line-height: 1.5;
+  margin: 0 0 0 auto;
+}
+
+.date-even {
+  font-size: 4vw;
+  font-weight: 100;
+  opacity: 0.3;
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
+}
+
+.month-even {
+  font-size: 2.4vw;
+  font-weight: 100;
+  position: absolute;
+  top: 5vw;
+  left: 1.2vw;
+  opacity: 0.3;
+}
+
+.post-3 {
+  background: #b1660e;
+}
+
+.post-4 {
+  background: #d12767;
+}
+.post-5 {
+  background: #2d95bb;
+  width: 1032px;
+  height: inherit;
+  color: #ffffff;
+  position: relative;
+  cursor: pointer;
+}
+
+.post-5:hover {
+  opacity: 0.5;
+}
+
+.post-5 h2 {
+  font-size: 60px;
+  font-weight: 200;
+  padding-left: 45px;
+  padding-top: 35px;
+}
+
+.text-post-5 {
+  width: 80%;
+  font-size: 17px;
+  font-weight: 200;
+  opacity: 0.7;
+  padding-left: 45px;
+  padding-top: 30px;
+  line-height: 1.5;
+  margin-bottom: 35px;
+}
+
+.gallery {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1vw;
+  margin-right: 1vw;
+}
+
+.post {
+  display: flex;
+}
+
+.news-item {
+  background-color: #ffffff;
+  margin-right: 0;
+}
+
+.news-item img {
+  width: 100%;
+  height: 30vh;
+}
+
+.news-item p {
+  opacity: 0.6;
+  font-size: 1.1vw;
+  padding: 0.8vw 2.2vw 2vw 2.2vw;
+}
+
+.news-item h3 {
+  margin-top: 2vw;
+  font-weight: 300;
+  margin-left: 2.2vw;
+  font-size: 4vh;
+  opacity: 0.8;
+}
+
+.section-gallery {
+  padding: 20px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  width: 100%;
+  background-color: #162b4d;
+  margin-top: 20px;
+  height: 80px;
+  padding-left: 40px;
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer p {
+  color: #ffffff;
+  opacity: 0.3;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.footer-name {
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  header {
+    flex-direction: column-reverse;
+    padding: 3vw 0;
+  }
+}
