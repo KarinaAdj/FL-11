@@ -2,13 +2,15 @@
  * Feel free to change name of colors if you need it
  * Feel free to add new colors if you need it
  */
-:root {
+/*  
+ :root {
   --bg-color--dark: #0b192f;
   --bg-color--header: #162b4d;
   --link: #fff;
   --link--hover: #b8b8b8;
   --bg-footer-color: #162b4d;
 }
+ */
 
 body {
   font-family: roboto;
@@ -40,6 +42,18 @@ body {
   color: #ffffff;
 }
 
+.header-burger {
+  display: none;
+}
+
+.header-burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+
 .landing-logo span {
   color: #b71757;
 }
@@ -49,10 +63,9 @@ body {
 }
 
 .main-logo a {
-  padding: 41px 2.5rem 40px 2.5rem;
-
+  padding: 41px 2.5rem 37px 2.5rem;
   font-size: 19px;
-  font-weight: 270;
+  font-weight: 300;
 }
 
 .main-logo a:hover {
@@ -89,10 +102,11 @@ body {
   font-weight: 100;
   padding-left: 3vw;
   padding-top: 2vw;
+  max-width: 300px;
 }
 
 .post-odd p {
-  width: 324px;
+  max-width: 324px;
   font-size: 17px;
   font-weight: 200;
   opacity: 0.7;
@@ -102,24 +116,26 @@ body {
   padding-bottom: 3vw;
 }
 
-.date-odd {
-  font-size: 4vw;
-  font-weight: 100;
-  opacity: 0.3;
+.post-date {
   position: absolute;
-  top: 1vw;
-  right: 1vw;
+  top: 0;
+  right: 0;
+  margin: 12px;
+  font-size: 55px;
+  font-weight: 200;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.month-odd {
-  font-size: 2.4vw;
-  font-weight: 100;
-  position: absolute;
-  top: 5vw;
-  right: 1vw;
-  opacity: 0.3;
+.post-date span {
+  position: relative;
+  top: -15px;
+  font-size: 36px;
 }
 
+.post-date-even {
+  right: inherit;
+}
 .month-odd5 {
   font-size: 2.4vw;
   font-weight: 100;
@@ -141,13 +157,13 @@ body {
   cursor: pointer;
 }
 
-.travel-fhoto {
+.travel-photo {
   width: 50%;
   cursor: pointer;
   transition: opacity 1s linear;
 }
 
-.travel-fhoto:hover {
+.travel-photo:hover {
   opacity: 0.5;
 }
 
@@ -155,18 +171,18 @@ body {
   font-size: 60px;
   font-weight: 200;
   text-align: right;
-  padding-top: 35px;
-  padding-right: 45px;
+  padding-top: 2vw;
+  padding-right: 3vw;
 }
 
 .post-even p {
-  width: 324px;
+  max-width: 324px;
   font-size: 17px;
   font-weight: 200;
   opacity: 0.7;
   text-align: right;
-  padding-right: 45px;
-  padding-top: 35px;
+  padding-right: 3vw;
+  padding-top: 1vw;
   padding-bottom: 3vw;
   line-height: 1.5;
   margin: 0 0 0 auto;
@@ -213,8 +229,8 @@ body {
 .post-5 h2 {
   font-size: 60px;
   font-weight: 200;
-  padding-left: 45px;
-  padding-top: 35px;
+  padding-left: 3vw;
+  padding-top: 2vw;
 }
 
 .text-post-5 {
@@ -222,46 +238,48 @@ body {
   font-size: 17px;
   font-weight: 200;
   opacity: 0.7;
-  padding-left: 45px;
-  padding-top: 30px;
+  padding-left: 3vw;
+  padding-top: 1vw;
   line-height: 1.5;
-  margin-bottom: 35px;
+  margin-bottom: 3vw;
 }
 
 .gallery {
   width: 75%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 1vw;
-  margin-right: 1vw;
+  margin-right: 20px;
 }
 
 .post {
   display: flex;
+  width: 100%;
 }
 
 .news-item {
   background-color: #ffffff;
   margin-right: 0;
+  margin-bottom: 20px;
 }
 
 .news-item img {
   width: 100%;
-  height: 30vh;
+}
+
+.news-item h3 {
+  font-size: 2.5vw;
+  margin-top: 2vw;
+  font-weight: 300;
+  margin-left: 2.2vw;
+  opacity: 0.8;
 }
 
 .news-item p {
   opacity: 0.6;
-  font-size: 1.1vw;
+  font-size: 1.2vw;
+  line-height: 1.5;
   padding: 0.8vw 2.2vw 2vw 2.2vw;
-}
-
-.news-item h3 {
-  margin-top: 2vw;
   font-weight: 300;
-  margin-left: 2.2vw;
-  font-size: 4vh;
-  opacity: 0.8;
 }
 
 .section-gallery {
@@ -272,12 +290,9 @@ body {
 }
 
 .footer {
-  width: 100%;
   background-color: #162b4d;
   margin-top: 20px;
-  height: 80px;
-  padding-left: 40px;
-  padding-top: 35px;
+  padding: 4vw 3vw;
   display: flex;
   justify-content: space-between;
 }
@@ -293,14 +308,237 @@ body {
   padding-right: 30px;
 }
 
+@media screen and (max-width: 1400px) and (min-width: 769px) {
+  .post h2,
+  .post-5 h2 {
+    font-size: 4vw;
+  }
+
+  .post p,
+  .text-post-5 {
+    margin-top: 2vw;
+    font-size: 1.3vw;
+  }
+
+  .post-date {
+    font-size: 3.5vw;
+  }
+
+  .post-date span {
+    font-size: 2.2vw;
+  }
+
+  .footer p {
+    font-size: 1.3vw;
+  }
+}
+
 @media screen and (max-width: 768px) and (min-width: 481px) {
+  body {
+    padding: 0 10px;
+  }
+
   .container {
     max-width: 768px;
-    margin: 0 auto;
   }
 
   header {
     flex-direction: column-reverse;
-    padding: 3vw 0;
+  }
+
+  .main-logo {
+    display: none;
+  }
+
+  .header-burger {
+    display: inline-block;
+    margin: 0 auto 20px auto;
+  }
+
+  .header-elements {
+    flex-direction: column;
+  }
+
+  .landing-logo {
+    text-align: center;
+  }
+
+  .gallery {
+    width: 60%;
+  }
+
+  .post {
+    flex-direction: column;
+  }
+
+  .travel-photo {
+    width: 100%;
+  }
+
+  .post-odd,
+  .post-even {
+    width: 100%;
+  }
+
+  .post-2,
+  .post-4 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .post-odd h2,
+  .post-even h2 {
+    max-width: 280px;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+  }
+
+  .post-even h2 {
+    text-align: left;
+    padding-left: 3vw;
+  }
+
+  .post-date {
+    position: relative;
+    left: 42%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .post-even p {
+    margin: 0 0 0 3vw;
+    text-align: left;
+  }
+
+  .post-5 h2 {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+  }
+
+  .news-item h3 {
+    font-size: 3.5vw;
+  }
+
+  .news-item p {
+    font-size: 2vw;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .container {
+    max-width: 460px;
+  }
+
+  header {
+    flex-direction: column-reverse;
+  }
+
+  .section-gallery {
+    flex-direction: column;
+  }
+
+  .main-logo {
+    display: none;
+  }
+
+  .header-burger {
+    display: inline-block;
+    margin: 0 auto 20px auto;
+  }
+
+  .header-elements {
+    flex-direction: column;
+  }
+
+  .landing-logo {
+    text-align: center;
+  }
+
+  .gallery {
+    width: 100%;
+  }
+
+  .post {
+    flex-direction: column;
+  }
+
+  .travel-photo {
+    width: 100%;
+  }
+
+  .post-odd,
+  .post-even {
+    width: 100%;
+  }
+
+  .post-2,
+  .post-4 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .post-odd h2,
+  .post-even h2 {
+    max-width: 280px;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-size: 10vw;
+  }
+
+  .post-even h2 {
+    text-align: left;
+    padding-left: 3vw;
+  }
+
+  .post-date {
+    position: relative;
+    left: 42%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .post-even p {
+    margin: 0 0 0 3vw;
+    text-align: left;
+  }
+
+  .post-5 h2 {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+    font-size: 10vw;
+  }
+
+  .news-item {
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+
+  .news-item h3 {
+    font-size: 6vw;
+  }
+
+  .news-item p {
+    font-size: 4vw;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer p {
+    padding: 0;
   }
 }
